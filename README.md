@@ -38,7 +38,10 @@ gulp.task(() => {
     .pipe(gulpAwsS3Upload({
       onlyNew: process.NODE_ENV !== 'production',
       cache: '.tmp/s3-cache.json',
-      headers: { 'Cache-Control': 'max-age=864000, s-maxage=864000, must-revalidate' },
+      headers: { 
+          'Cache-Control': 'max-age=864000, s-maxage=864000, must-revalidate',
+          'x-amz-acl': 'public-read' // don't forget this header if this files are public!
+      },
       aws: {
         key: '...',
         secret: '...',
