@@ -12,12 +12,10 @@ gulp-aws-s3-upload
 npm install gulp-aws-s3-upload -S
 ```
 
-configurable gulp task for uploading to aws-s3 bucket
+Configurable gulp task for uploading to aws-s3 bucket
 
 ## USAGE
 ```js
-'use strict';
-
 const gulp = require('gulp');
 const gulpGzip = require('gulp-gzip');
 const gulpFilter = require('gulp-filter');
@@ -38,7 +36,10 @@ gulp.task(() => {
     .pipe(gulpAwsS3Upload({
       onlyNew: process.NODE_ENV !== 'production',
       cache: '.tmp/s3-cache.json',
-      headers: { 'Cache-Control': 'max-age=864000, s-maxage=864000, must-revalidate' },
+      headers: { 
+          'Cache-Control': 'max-age=864000, s-maxage=864000, must-revalidate',
+          'x-amz-acl': 'public-read' // don't forget this header if this files are public!
+      },
       aws: {
         key: '...',
         secret: '...',
@@ -51,28 +52,39 @@ gulp.task(() => {
 ## options
 
 ### options.onlyNew
-- if true uploader will upload only new files (use cache)
-Default: `false`,
+Default: `false`
+
+if true uploader will upload only new files (use cache)
+
+### options.public
+Default: `true`
+
+uploader additionally set header `'x-amz-acl': 'public-read'`
 
 ### options.cacheFile
-- file path for cache storage
 Default: `null`
 
+file path for caching file 
+
+
 ### options.cacheByFileName
-- mode for cache
-Default: 'false'
+Default: `false`
+
+mode for cache
+
 
 ### options.aws
-- credentials for s3 bucket
 Default: `{}` - required
 
-key: '...',
-secret: '...',
-bucket: '...'
+credentials for s3 bucket.
+- key: '...',
+- secret: '...',
+- bucket: '...',
+- or other props that are used by library [knox](https://github.com/Automattic/knox)
 
 
 ### options.uploadPath
 Default: `''`
 
 ### options.headers
-Default: `{ 'x-amz-acl': 'public-read' }`
+Default: `{}`

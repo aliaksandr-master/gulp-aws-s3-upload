@@ -1,19 +1,11 @@
 {
-  "parser": "babel-eslint",
   "env": {
-    "node": false,
+    "node": true,
     "es6": true
   },
   "globals": {
-    "window": true,
-    "module": true,
-    "exports": true,
-    "require": true,
-    "angular": true
   },
   "plugins": [
-    "angular",
-    "require-path-exists"
   ],
   "ecmaFeatures": {
     "arrowFunctions": [0],
@@ -39,12 +31,6 @@
     "jsx": [0]
   },
   "rules": {
-    "require-path-exists/notEmpty": 2,
-    "require-path-exists/tooManyArguments": 2,
-    "require-path-exists/exists": [ 2, {
-      "extensions": [ "", ".js" ]
-    }],
-
     "no-constant-condition": [2],
 
     "comma-dangle": [2, "never"],
