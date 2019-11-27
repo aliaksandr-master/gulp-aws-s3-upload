@@ -4,7 +4,7 @@
   "description": "configurable gulp task for uploading to aws-s3 bucket",
   "main": "lib/index.js",
   "scripts": {
-    "test": "node_modules/.bin/eslint src/*.js src/**/*.js",
+    "test": "node_modules/.bin/eslint lib/*.js lib/**/*.js",
     "prepush": "npm test",
     "precommit": "npm test"
   },
