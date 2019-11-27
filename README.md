@@ -43,7 +43,8 @@ gulp.task(() => {
       aws: {
         key: '...',
         secret: '...',
-        bucket: '...'
+        bucket: '...',
+        region: '...'
       }
     }));
 });
@@ -80,7 +81,7 @@ credentials for s3 bucket.
 - key: '...',
 - secret: '...',
 - bucket: '...',
-- or other props that are used by library [knox](https://github.com/Automattic/knox)
+- region: '...',
 
 
 ### options.uploadPath
