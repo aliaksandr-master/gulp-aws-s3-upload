@@ -7,29 +7,6 @@
   },
   "plugins": [
   ],
-  "ecmaFeatures": {
-    "arrowFunctions": [0],
-    "blockBindings": [0],
-    "classes": [0],
-    "defaultParams": [0],
-    "destructuring": [0],
-    "forOf": [0],
-    "generators": [2],
-    "modules": [0],
-    "objectLiteralComputedProperties": [0],
-    "objectLiteralDuplicateProperties": [2],
-    "objectLiteralShorthandMethods": [2],
-    "objectLiteralShorthandProperties": [2],
-    "regexUFlag": [2],
-    "regexYFlag": [2],
-    "restParams": [0],
-    "spread": [0],
-    "superInFunctions": [0],
-    "templateStrings": [0],
-    "unicodeCodePointEscapes": [2],
-    "globalReturn": [2],
-    "jsx": [0]
-  },
   "rules": {
     "no-constant-condition": [2],
 
