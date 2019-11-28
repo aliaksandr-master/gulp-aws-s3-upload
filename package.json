@@ -17,7 +17,7 @@
     "gulp-task",
     "s3",
     "upload",
-    "knox",
+    "aws-sdk",
     "aws",
     "bucket",
     "gulp-aws-s3-upload"
